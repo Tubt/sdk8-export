@@ -14,7 +14,7 @@ class App extends Component {
         this.sdk = sdkFactory({ domain: whiteLabeledDomain });
         console.log("sdk", this.sdk); // this needs to be provided as a prop to the Visualization component in render method
         this.projectId = "ltn06hvt07uko2r87itmnoaibgzc0mkn"; // this needs to be project on whitelabeled domain
-        this.visId = "289"; // this needs to be some chart visualization NOT table!!!
+        this.visId = "75548"; // this needs to be some chart visualization NOT table!!!
         // TODO once domain where this app is deployed is enabled for CORS on whitelabeled domain remove any PROXY settings
 
         this.doExport = this.doExport.bind(this);
