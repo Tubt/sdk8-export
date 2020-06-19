@@ -3,13 +3,17 @@ import "@gooddata/react-components/styles/css/main.css";
 import { Visualization } from "@gooddata/react-components";
 import { factory as sdkFactory } from "@gooddata/gooddata-js";
 
+import { useProjectId } from "../contexts/ProjectId";
+
 const DOWNLOADER_ID = "downloader";
 
 export class Example extends Component {
+    
     constructor(props) {
         super(props);
-
+        
         const whiteLabeledDomain = "zebroids.intgdc.com";
+        
         this.sdk = sdkFactory({ domain: whiteLabeledDomain }); // this needs to be provided as a prop to the Visualization component in render method
         this.projectId = "ltn06hvt07uko2r87itmnoaibgzc0mkn"; // this needs to be project on whitelabeled domain
         this.visId = "75548"; // this needs to be some chart visualization NOT table!!!
@@ -52,6 +56,7 @@ export class Example extends Component {
 
 
     render() {
+        
         return (
             <div style={{ height: 500 }} >
                 <div style={{ height: 350 }} className="s-area-chart">
