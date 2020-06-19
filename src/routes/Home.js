@@ -19,7 +19,7 @@ const Home = () => {
             });
     };
 
-    const visUri = `/gdc/md/${constants.projectId}/obj/290`; // or 289 column
+    const visUri = `/gdc/md/${constants.projectId}/obj/75548`; // or 289 column
 
     return (
         <Page>
