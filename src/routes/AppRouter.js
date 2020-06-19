@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import "@gooddata/react-components/styles/css/main.css";
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
 
 import { ProjectIdProvider } from "../contexts/ProjectId";
 import Login from "./Login";

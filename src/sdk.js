@@ -1,4 +1,4 @@
-import { factory as createSdk } from "@gooddata/gooddata-js";
+import { factory as createSdk } from "@gooddata/gd-bear-client";
 import { backend } from "./constants";
 
 // IMPORTANT

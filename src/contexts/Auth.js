@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useContext, createContext } from "react";
-import { ApiResponseError } from "@gooddata/gooddata-js";
+import { ApiResponseError } from "@gooddata/gd-bear-client";
 import { defaultSourceState } from "../utils";
 import sdk from "../sdk";
 

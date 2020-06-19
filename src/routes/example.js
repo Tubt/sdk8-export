@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import "@gooddata/react-components/styles/css/main.css";
-import { Visualization } from "@gooddata/react-components";
-import { factory as sdkFactory } from "@gooddata/gooddata-js";
-
+import "@gooddata/sdk-ui-charts/styles/css/main.css";
+import { InsightView, uriRef } from "@gooddata/sdk-ui-all";
+import { factory as sdkFactory } from "@gooddata/gd-bear-client";
 import { useProjectId } from "../contexts/ProjectId";
 
 const DOWNLOADER_ID = "downloader";
 
 export class Example extends Component {
-    
     constructor(props) {
         super(props);
-        
+
         const whiteLabeledDomain = "zebroids.intgdc.com";
-        
+
         this.sdk = sdkFactory({ domain: whiteLabeledDomain }); // this needs to be provided as a prop to the Visualization component in render method
         this.projectId = "ltn06hvt07uko2r87itmnoaibgzc0mkn"; // this needs to be project on whitelabeled domain
         this.visId = "75548"; // this needs to be some chart visualization NOT table!!!
@@ -42,7 +40,6 @@ export class Example extends Component {
         this.doExport({ format: "csv" });
     };
 
-
     async doExport(exportConfig) {
         try {
             const result = await this.exportResult(exportConfig);
@@ -54,25 +51,23 @@ export class Example extends Component {
         }
     }
 
-
     render() {
-        
         return (
-            <div style={{ height: 500 }} >
+            <div style={{ height: 500 }}>
                 <div style={{ height: 350 }} className="s-area-chart">
-                    <Visualization
-                        projectId={this.projectId}
-                        uri={`/gdc/md/${this.projectId}/obj/${this.visId}`}
+                    <InsightView
+                        workspace={this.projectId}
+                        insight={uriRef(`/gdc/md/${this.projectId}/obj/${this.visId}`)}
                         sdk={this.sdk}
                         onExportReady={this.onExportReady}
                     />
                     <div style={{ marginTop: 15 }}>
                         <button className="gd-button gd-button-secondary" onClick={this.exportToCSV}>
                             Test Export CSV
-                    </button>
+                        </button>
                     </div>
                 </div>
-            </div >
+            </div>
         );
     }
 }
